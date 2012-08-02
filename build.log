@@ -1,0 +1,38 @@
+Logfile initialized
+[INFO] logfile = /Users/thesargenator/Titanium/GDS/build.log
+[DEBUG] /Users/thesargenator/Library/Application Support/Titanium/mobilesdk/osx/2.0.2.GA/android/builder.py simulator GDS /android-sdk-macosx /Users/thesargenator/Titanium/GDS com.gds.com 3 HVGA 
+[INFO] Building GDS for Android ... one moment
+[INFO] Launching Android emulator...one moment
+[DEBUG] From: /android-sdk-macosx/tools/emulator
+[DEBUG] SDCard: /Users/thesargenator/.titanium/android2.sdcard
+[DEBUG] AVD ID: 3
+[DEBUG] AVD Skin: HVGA
+[DEBUG] SDK: /android-sdk-macosx
+[INFO] Creating 64M SD card for use in Android emulator
+[INFO] Creating new Android Virtual Device (3 HVGA)
+[INFO] Titanium SDK version: 2.0.2 (05/30/12 10:21 2ff31a3)
+[DEBUG] Waiting for device to be ready ...
+[TRACE] adb devices returned 0 devices/emulators
+[TRACE] adb devices returned 0 devices/emulators
+[DEBUG] /android-sdk-macosx/tools/emulator -avd titanium_3_HVGA -port 5560 -sdcard /Users/thesargenator/.titanium/titanium_3_HVGA.sdcard -logcat *:d,* -no-boot-anim -partition-size 128
+[TRACE] adb devices returned 0 devices/emulators
+[TRACE] adb devices returned 0 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 0 devices/emulators
+[TRACE] adb devices returned 0 devices/emulators
+[ERROR] Timed out waiting for emulator to be ready, you may need to close the emulator and try again
+[INFO] Android Emulator has exited

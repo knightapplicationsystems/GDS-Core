@@ -1,0 +1,27 @@
+var win;var row;var tableData=[];var tableview;var failureMessage;var btnRetry;var lblUnableToConnect;var actInd;var adView;var btnNowPlaying;var db;var imgNav;win=Ti.UI.currentWindow;win.backgroundImage='../images/background.png'
+failureMessage=Ti.UI.createAlertDialog({title:'Alert',message:'Alert Message'});db=Ti.Database.open('global');btnNowPlaying=Ti.UI.createButton({systemButton:Ti.UI.iPhone.SystemButton.PLAY,height:40,top:160,right:10});win.addEventListener('focus',function(){checkPlaying();});function checkPlaying(){db=Ti.Database.open('global');var checkPlayback=db.execute('SELECT * FROM playing');if(checkPlayback.field(1)=='Yes'){Ti.API.warn('I am here WHY!!!');var tabGroup=Ti.UI.currentTabGroup;win.rightNavButton=btnNowPlaying;btnNowPlaying.addEventListener('click',function(e){tabGroup.tabs[1].active=true;});}
+if(checkPlayback.field(1)=='No'){Ti.API.warn('Nothing is playing so I should be vanished');win.setRightNavButton(null);}
+db.close();}
+function showIndicator(){actInd=Ti.UI.createActivityIndicator({style:Ti.UI.iPhone.ActivityIndicatorStyle.BIG,message:'Please Wait..',color:'white',height:60,width:'auto'});activityWindow=Ti.UI.createWindow({width:200,height:100});activityBg=Ti.UI.createView({backgroundColor:"#000000",opacity:0.8,borderRadius:10});activityWindow.add(activityBg);activityWindow.add(actInd);activityWindow.open();actInd.show();}
+function hideIndicator(){activityWindow.close();}
+function getTweets(){if(Ti.Platform.name=='android'){}else{showIndicator();}
+var data=[];var xhr=Ti.Network.createHTTPClient();xhr.onload=serviceResponse;xhr.onerror=function(){hideIndicator();Ti.API.info('Am I dead yet?');Ti.API.info("Error in webserver");failureMessage.message="Unable to connect to Twitter, Please try again later (For best results use a 3G or WiFi connection)";failureMessage.show();lblUnableToConnect=Ti.UI.createLabel({text:'Sorry we are unable to connect you to twitter at this time, please try again later',height:'auto',top:80,left:10,color:'White',font:{fontSize:15,fontStyle:'normal'},textAlign:'left'});if(Ti.Platform.name=='android'){btnRetry=Ti.UI.createButton({top:200,left:10,width:300,height:40,color:'black',text:'Retry',font:{fontSize:30,fontFamily:'Arial',fontWeight:'bold'}});}
+btnRetry=Ti.UI.createButtonBar({top:170,left:10,width:300,height:40,labels:['Retry'],style:Ti.UI.iPhone.SystemButtonStyle.BAR,font:{fontSize:15,fontFamily:'Arial',fontWeight:'bold'}});win.add(btnRetry,lblUnableToConnect);btnRetry.addEventListener('click',function(e){Ti.API.info('FIred');if(lblUnableToConnect.visible=true){Ti.API.info('Idiot');lblUnableToConnect.visible=false;}
+if(btnRetry.visible=true){Ti.API.info('Idiot2');btnRetry.visible=false;}
+getTweets();});}
+xhr.timeout=1000000;xhr.open("GET","http://api.twitter.com/1/statuses/user_timeline.json?screen_name=@GlobalDanceSess");xhr.send();}
+function serviceResponse(){Ti.API.info(this.responseText);var tweets;tweets=JSON.parse(this.responseText);Ti.API.warn(tweets);for(var i in tweets){row=Ti.UI.createTableViewRow({height:36,backgroundColor:'transparent',selectedBackgroundColor:'#dddddd',hasChild:true,rightImage:'../images/Arrow.png'});if(Ti.Platform.osname=='ipad'){row.height=80;}
+if(Ti.Platform.name=='android'){row.height='auto';var tweetText=Ti.UI.createLabel({text:tweets[i].text,color:'White',textAlign:'left',left:10,top:8,height:'auto',font:{fontWeight:'bold',fontSize:25}});}else if(Ti.Platform.osname=='ipad'){var tweetText=Ti.UI.createLabel({text:tweets[i].text,color:'White',textAlign:'left',left:10,top:8,height:'auto',font:{fontWeight:'bold',fontSize:20}});}else{var tweetText=Ti.UI.createLabel({text:tweets[i].text,color:'White',textAlign:'left',left:10,top:8,height:18,font:{fontWeight:'bold',fontSize:13}});}
+Ti.API.warn(tweets[i].text);row.add(tweetText);tableData[i]=row;}
+tableview=Ti.UI.createTableView({data:tableData,height:280,separatorColor:'#C9EE00',backgroundColor:'transparent'});if(Ti.Platform.osname=='ipad'){tableview.height=770;tableview.top=70;}
+else
+{tableview.top=31;}
+if(Ti.Platform.name=='android'){tableview.top=0;}else{hideIndicator();}
+Ti.UI.currentWindow.add(tableview);tableview.addEventListener('click',function(e){var index=e.index;var section=e.section;var row=e.row;var rowdata=e.rowData;var viewTweets=Ti.UI.createWindow({url:'gdsViewTweet.js'});viewTweets.tweet=tweets[e.index].text;viewTweets.desc=tweets[e.index].user.description;Ti.UI.currentTab.open(viewTweets,{animated:true});});}
+getTweets();if(Ti.Platform.name=='android'){}else{if(Ti.Platform.osname=='ipad'){win.barImage='../images/gds_iPad_HEADER.png';}
+else
+{win.barImage='../images/GDS_APP_HEADER.png';}
+adView=Ti.UI.iOS.createAdView({width:'auto',height:50,bottom:0,zIndex:20});win.add(adView);if(Ti.Platform.osname=='ipad'){imgNav=Ti.UI.createLabel({top:0,height:50,left:0,backgroundImage:'../images/gds_iPad_twitter.png'});}
+else
+{imgNav=Ti.UI.createLabel({top:0,height:50,left:0,backgroundImage:'../images/NAV_Header_TWITTER.png'});}
+win.add(imgNav);}
