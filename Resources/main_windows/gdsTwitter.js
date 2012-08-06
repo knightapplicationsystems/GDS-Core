@@ -23,40 +23,43 @@ failureMessage = Titanium.UI.createAlertDialog({
 	title : 'Alert',
 	message : 'Alert Message'
 });
-db = Titanium.Database.open('global');
-
-btnNowPlaying = Titanium.UI.createButton({
-	systemButton : Titanium.UI.iPhone.SystemButton.PLAY,
-	height : 40,
-	top : 160,
-	right : 10
-});
-
-win.addEventListener('focus', function() {
-	checkPlaying();
-});
-function checkPlaying() {
+if (Titanium.Platform.name == 'android') {
+} else {
 	db = Titanium.Database.open('global');
-	var checkPlayback = db.execute('SELECT * FROM playing');
 
-	if (checkPlayback.field(1) == 'Yes') {
-		Ti.API.warn('I am here WHY!!!');
-		var tabGroup = Titanium.UI.currentTabGroup;
+	btnNowPlaying = Titanium.UI.createButton({
+		systemButton : Titanium.UI.iPhone.SystemButton.PLAY,
+		height : 40,
+		top : 160,
+		right : 10
+	});
 
-		win.rightNavButton = btnNowPlaying;
-		btnNowPlaying.addEventListener('click', function(e) {
-			tabGroup.tabs[1].active = true;
-		});
+	win.addEventListener('focus', function() {
+		checkPlaying();
+	});
+	function checkPlaying() {
+		db = Titanium.Database.open('global');
+		var checkPlayback = db.execute('SELECT * FROM playing');
 
+		if (checkPlayback.field(1) == 'Yes') {
+			Ti.API.warn('I am here WHY!!!');
+			var tabGroup = Titanium.UI.currentTabGroup;
+
+			win.rightNavButton = btnNowPlaying;
+			btnNowPlaying.addEventListener('click', function(e) {
+				tabGroup.tabs[1].active = true;
+			});
+
+		}
+		if (checkPlayback.field(1) == 'No') {
+			Ti.API.warn('Nothing is playing so I should be vanished');
+			win.setRightNavButton(null);
+
+		}
+		db.close();
 	}
-	if (checkPlayback.field(1) == 'No') {
-		Ti.API.warn('Nothing is playing so I should be vanished');
-		win.setRightNavButton(null);
 
-	}
-	db.close();
 }
-
 //Activity Indicator
 function showIndicator() {
 	actInd = Ti.UI.createActivityIndicator({
@@ -132,7 +135,7 @@ function getTweets() {
 				color : 'black',
 				text : 'Retry',
 				font : {
-					fontSize : 30,
+					fontSize : '30dp',
 					fontFamily : 'Arial',
 					fontWeight : 'bold'
 				}
@@ -205,7 +208,7 @@ function serviceResponse() {
 		}
 
 		if (Titanium.Platform.name == 'android') {
-			row.height = 'auto';
+			row.height = 80;
 			var tweetText = Ti.UI.createLabel({
 				text : tweets[i].text,
 				color : 'White',
@@ -215,7 +218,7 @@ function serviceResponse() {
 				height : 'auto',
 				font : {
 					fontWeight : 'bold',
-					fontSize : 25
+					fontSize : '13dp'
 				}
 			});
 		} else if (Ti.Platform.osname == 'ipad') {
@@ -264,13 +267,12 @@ function serviceResponse() {
 	if (Ti.Platform.osname == 'ipad') {
 		tableview.height = 770;
 		tableview.top = 70;
-	}
-	else
-	{
+	} else {
 		tableview.top = 31;
 	}
 	if (Titanium.Platform.name == 'android') {
-		tableview.top = 0;
+		tableview.top = 5;
+		tableview.height = 'auto';
 	} else {
 		hideIndicator();
 	}
@@ -304,12 +306,10 @@ if (Titanium.Platform.name == 'android') {
 
 } else {
 
-		if (Ti.Platform.osname == 'ipad') {
+	if (Ti.Platform.osname == 'ipad') {
 		win.barImage = '../images/gds_iPad_HEADER.png';
 
-	}
-		else
-	{
+	} else {
 		win.barImage = '../images/GDS_APP_HEADER.png';
 	}
 	adView = Titanium.UI.iOS.createAdView({
@@ -320,24 +320,21 @@ if (Titanium.Platform.name == 'android') {
 	});
 	win.add(adView);
 	if (Ti.Platform.osname == 'ipad') {
-		
+
 		imgNav = Ti.UI.createLabel({
 			top : 0,
 			height : 50,
 			left : 0,
 			backgroundImage : '../images/gds_iPad_twitter.png'
 		});
+	} else {
+		imgNav = Ti.UI.createLabel({
+			top : 0,
+			height : 50,
+			left : 0,
+			backgroundImage : '../images/NAV_Header_TWITTER.png'
+		});
 	}
-else
-{
-	imgNav = Ti.UI.createLabel({
-		top : 0,
-		height : 50,
-		left : 0,
-		backgroundImage : '../images/NAV_Header_TWITTER.png'
-	});
-}
-
 
 	win.add(imgNav);
 	// create and add toolbar

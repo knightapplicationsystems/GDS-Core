@@ -166,7 +166,7 @@ function callService()
 					color:'black',
 					text:'Retry',
 					font: {
-						fontSize:30,
+						fontSize:'30dp',
 						fontFamily:'Arial',
 						fontWeight:'bold'
 					}
@@ -252,7 +252,7 @@ function serviceResponse()
 		
 
 	if (Titanium.Platform.name == 'android') {
-		row.height = 'auto';
+		row.height = 80;
 		var infoDesc = Ti.UI.createLabel({
 			text: fStripped,
 			color: 'White',
@@ -262,7 +262,7 @@ function serviceResponse()
 			height:'auto',
 			font: {
 				fontWeight:'bold',
-				fontSize:25
+				fontSize:'13dp'
 			}
 		});
 	}
@@ -330,7 +330,7 @@ function serviceResponse()
 	}
 	if (Titanium.Platform.name == 'android') {
 		tableview.top = 0;
-		row.height = 120;
+		tableview.height = 'auto';
 	}
 	else{
 		hideIndicator();
@@ -349,10 +349,17 @@ function serviceResponse()
 		});
 		
 		
+		var nonSecURL = info[e.index].stream_url;
+		nonSecURL = nonSecURL.replace('https:', 'http:');
+		Ti.API.warn('This is the URL ' + nonSecURL);
+		if (Titanium.Platform.name == 'android') {
+			var scUrl = nonSecURL;
+		}
+		else
+		{
+			var scUrl = info[e.index].stream_url;
 		
-		var scUrl = info[e.index].stream_url;
-		
-		
+		}
 		
 		
 		audioPlayer.scURL = scUrl;

@@ -2,5 +2,5 @@ android/alias=GDS
 android/keystore=/Users/thesargenator/Desktop/GDSAndroidKey
 android/output_location=/Users/thesargenator/Desktop
 android/recent_output=/Users/thesargenator/Desktop
-android/sdk=Google APIs Android 2.3.3
+android/sdk=Android 2.2
 eclipse.preferences.version=1

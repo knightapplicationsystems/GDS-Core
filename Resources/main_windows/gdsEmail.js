@@ -16,51 +16,51 @@ var fbLogin;
 //Window Loading section
 win = Titanium.UI.currentWindow;
 win.backgroundImage = '../images/background.png'
+if (Titanium.Platform.name == 'android') {
+} else {
+	btnNowPlaying = Titanium.UI.createButton({
+		systemButton : Titanium.UI.iPhone.SystemButton.PLAY,
+		height : 40,
+		top : 160,
+		right : 10
+	});
 
-btnNowPlaying = Titanium.UI.createButton({
-	systemButton : Titanium.UI.iPhone.SystemButton.PLAY,
-	height : 40,
-	top : 160,
-	right : 10
-});
+	win.addEventListener('focus', function() {
+		checkPlaying();
+	});
+	function checkPlaying() {
+		db = Titanium.Database.open('global');
+		var checkPlayback = db.execute('SELECT * FROM playing');
 
-win.addEventListener('focus', function() {
-	checkPlaying();
-});
-function checkPlaying() {
-	db = Titanium.Database.open('global');
-	var checkPlayback = db.execute('SELECT * FROM playing');
+		if (checkPlayback.field(1) == 'Yes') {
+			Ti.API.warn('I am here WHY!!!');
+			var tabGroup = Titanium.UI.currentTabGroup;
 
-	if (checkPlayback.field(1) == 'Yes') {
-		Ti.API.warn('I am here WHY!!!');
-		var tabGroup = Titanium.UI.currentTabGroup;
+			win.rightNavButton = btnNowPlaying;
+			btnNowPlaying.addEventListener('click', function(e) {
+				tabGroup.tabs[1].active = true;
+			});
 
-		win.rightNavButton = btnNowPlaying;
-		btnNowPlaying.addEventListener('click', function(e) {
-			tabGroup.tabs[1].active = true;
-		});
+		}
+		if (checkPlayback.field(1) == 'No') {
+			Ti.API.warn('Nothing is playing so I should be vanished');
+			win.setRightNavButton(null);
 
+		}
+		db.close();
 	}
-	if (checkPlayback.field(1) == 'No') {
-		Ti.API.warn('Nothing is playing so I should be vanished');
-		win.setRightNavButton(null);
 
-	}
-	db.close();
 }
-
 if (Titanium.Platform.name == 'android') {
 	isAndroid = true;
 	Ti.API.info('Is this cheese?');
 	win.title = 'Email Us';
 } else {
-	
-		if (Ti.Platform.osname == 'ipad') {
+
+	if (Ti.Platform.osname == 'ipad') {
 		win.barImage = '../images/gds_iPad_HEADER.png';
 
-	}
-	else
-	{
+	} else {
 		win.barImage = '../images/GDS_APP_HEADER.png';
 	}
 	adView = Titanium.UI.iOS.createAdView({
@@ -70,28 +70,24 @@ if (Titanium.Platform.name == 'android') {
 	});
 	win.add(adView);
 	if (Ti.Platform.osname == 'ipad') {
-		
+
 		imgNav = Ti.UI.createLabel({
 			top : 0,
 			height : 50,
 			left : 0,
 			backgroundImage : '../images/gds_iPad_emailus.png'
 		});
+	} else {
+		imgNav = Ti.UI.createLabel({
+			top : 0,
+			height : 50,
+			left : 0,
+			backgroundImage : '../images/NAV_Header_EMAIL.png'
+		});
 	}
-else
-{
-	imgNav = Ti.UI.createLabel({
-		top : 0,
-		height : 50,
-		left : 0,
-		backgroundImage : '../images/NAV_Header_EMAIL.png'
-	});
-}
-
 
 	win.add(imgNav);
 }
-
 
 if (Ti.Platform.osname == 'ipad') {
 	lblRadio = Titanium.UI.createLabel({
@@ -106,7 +102,24 @@ if (Ti.Platform.osname == 'ipad') {
 		},
 		textAlign : 'left'
 	});
-} else {
+} 
+else if (Ti.Platform.name == 'android')
+{
+	lblRadio = Titanium.UI.createLabel({
+		text : 'RADIO STATIONS \nWant to air GDS on your frequency? ',
+		height : 'auto',
+		top : 50,
+		left : 10,
+		color : 'White',
+		font : {
+			fontSize : '18dp',
+			fontStyle : 'normal'
+		},
+		textAlign : 'left'
+	});
+}
+
+else {
 	lblRadio = Titanium.UI.createLabel({
 		text : 'RADIO STATIONS \nWant to air GDS on your frequency? ',
 		height : 'auto',
@@ -139,7 +152,24 @@ if (Ti.Platform.osname == 'ipad') {
 		},
 		textAlign : 'left'
 	});
-} else {
+} 
+else if (Ti.Platform.name == 'android')
+{
+	lblEvents = Titanium.UI.createLabel({
+		text : 'EVENTS \nWant to put on a GDS event at your venue? ',
+		height : 'auto',
+		top : 65,
+		left : 10,
+		color : 'White',
+		font : {
+			fontSize : '18dp',
+			fontStyle : 'normal'
+		},
+		textAlign : 'left'
+	});
+}
+
+else {
 	lblEvents = Titanium.UI.createLabel({
 		text : 'EVENTS \nWant to put on a GDS event at your venue? ',
 		height : 'auto',
@@ -171,7 +201,24 @@ if (Ti.Platform.osname == 'ipad') {
 		},
 		textAlign : 'left'
 	});
-} else {
+} 
+else if (Ti.Platform.name == 'android')
+{
+		lblPromo = Titanium.UI.createLabel({
+		text : 'PROMOS \nWant us to consider your tracks for GDS? (No attachments, just links please)',
+		height : 'auto',
+		top : 80,
+		left : 10,
+		color : 'White',
+		font : {
+			fontSize : '18dp',
+			fontStyle : 'normal'
+		},
+		textAlign : 'left'
+	});
+}
+
+else {
 	lblPromo = Titanium.UI.createLabel({
 		text : 'PROMOS \nWant us to consider your tracks for GDS? (No attachments, just links please)',
 		height : 'auto',
@@ -270,20 +317,37 @@ if (Ti.Platform.osname == 'ipad') {
 		backgroundImage : '../images/twit_.png'
 
 	});
-	var lblTwit = Titanium.UI.createLabel({
-		top : 255,
-		height : 'auto',
-		left : 50,
-		color : 'White',
-		font : {
-			fontSize : 13,
-			fontStyle : 'normal'
-		},
-		text : 'Follow us on Twitter'
-
-	});
+	
+	if (Titanium.Platform.name == 'android') {
+			var lblTwit = Titanium.UI.createLabel({
+			top : 255,
+			height : 'auto',
+			left : 50,
+			color : 'White',
+			font : {
+				fontSize : '13dp',
+				fontStyle : 'normal'
+			},
+			text : 'Follow us on Twitter'
+	
+		});
+	}
+	else
+	{
+		var lblTwit = Titanium.UI.createLabel({
+			top : 255,
+			height : 'auto',
+			left : 50,
+			color : 'White',
+			font : {
+				fontSize : 13,
+				fontStyle : 'normal'
+			},
+			text : 'Follow us on Twitter'
+	
+		});
+	}
 }
-
 
 btnTwit.addEventListener('click', function(e) {
 
@@ -302,11 +366,13 @@ btnTwit.addEventListener('click', function(e) {
 });
 
 if (Titanium.Platform.name == 'android') {
-	lblRadio.fontSize = 30;
-	lblEvents.top = 295;
-	lblEvents.fontSize = 30;
-	lblPromo.top = 440;
-	lblPromo.fontSize = 30;
+
+	lblEvents.top = '115dp';
+
+	lblPromo.top = '205dp';
+
+	lblTwit.top='320dp';
+	btnTwit.top='315dp';
 }
 
 win.add(lblRadio);
