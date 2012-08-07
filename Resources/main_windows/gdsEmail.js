@@ -17,6 +17,44 @@ var fbLogin;
 win = Titanium.UI.currentWindow;
 win.backgroundImage = '../images/background.png'
 if (Titanium.Platform.name == 'android') {
+	try {
+		win.title = 'News';
+		var Admob = require('ti.admob');
+		var adMobView = Admob.createView({
+			publisherId : "a15021686c99134",
+			testing : false, // default is false
+			//top: 10, //optional
+			//left: 0, // optional
+			//right: 0, // optional
+			bottom : 0, // optional
+			adBackgroundColor : "FF8855", // optional
+			backgroundColorTop : "738000", //optional - Gradient background color at top
+			borderColor : "#000000", // optional - Border color
+			textColor : "#000000", // optional - Text color
+			urlColor : "#00FF00", // optional - URL color
+			linkColor : "#0000FF",
+			height:'75dp',
+			width:'480dp'//optional -  Link text color
+			//primaryTextColor: "blue", // deprecated -- now maps to textColor
+			//secondaryTextColor: "green" // deprecated -- now maps to linkColor
+
+		});
+		win.add(adMobView);
+		//AdMobView.requestTestAd();
+		//listener for adNotReceived
+		adMobView.addEventListener(Admob.AD_NOT_RECEIVED, function() {
+			//alert("ad not received");
+			Ti.API.info("ad not received");
+			try {
+
+			} catch (e) {
+				adMobView.requestAd();
+			}
+
+		});
+	} catch(e) {
+
+	}
 } else {
 	btnNowPlaying = Titanium.UI.createButton({
 		systemButton : Titanium.UI.iPhone.SystemButton.PLAY,
@@ -371,7 +409,7 @@ if (Titanium.Platform.name == 'android') {
 
 	lblPromo.top = '205dp';
 
-	lblTwit.top='320dp';
+	lblTwit.top='312dp';
 	btnTwit.top='315dp';
 }
 

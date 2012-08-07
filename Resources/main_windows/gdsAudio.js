@@ -81,6 +81,44 @@ function hideIndicator() {
 callService();
 if (Titanium.Platform.name == 'android') {
 	win.title = 'Shows';
+	try {
+		win.title = 'News';
+		var Admob = require('ti.admob');
+		var adMobView = Admob.createView({
+			publisherId : "a15021686c99134",
+			testing : false, // default is false
+			//top: 10, //optional
+			//left: 0, // optional
+			//right: 0, // optional
+			bottom : 0, // optional
+			adBackgroundColor : "FF8855", // optional
+			backgroundColorTop : "738000", //optional - Gradient background color at top
+			borderColor : "#000000", // optional - Border color
+			textColor : "#000000", // optional - Text color
+			urlColor : "#00FF00", // optional - URL color
+			linkColor : "#0000FF",
+			height:'75dp',
+			width:'480dp'//optional -  Link text color
+			//primaryTextColor: "blue", // deprecated -- now maps to textColor
+			//secondaryTextColor: "green" // deprecated -- now maps to linkColor
+
+		});
+		win.add(adMobView);
+		//AdMobView.requestTestAd();
+		//listener for adNotReceived
+		adMobView.addEventListener(Admob.AD_NOT_RECEIVED, function() {
+			//alert("ad not received");
+			Ti.API.info("ad not received");
+			try {
+
+			} catch (e) {
+				adMobView.requestAd();
+			}
+
+		});
+	} catch(e) {
+
+	}
 }
 else
 {
@@ -330,7 +368,7 @@ function serviceResponse()
 	}
 	if (Titanium.Platform.name == 'android') {
 		tableview.top = 0;
-		tableview.height = 'auto';
+		tableview.height = '400dp';
 	}
 	else{
 		hideIndicator();

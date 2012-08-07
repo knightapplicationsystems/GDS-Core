@@ -19,23 +19,25 @@ if (!Ti.Network.online) {
 //
 // create base UI tab and root window
 //
-var winNews = Titanium.UI.createWindow({  
-	url:'main_windows/gdsNews.js'
-});
-var tab1 = Titanium.UI.createTab({  
-    icon:'gds_rss.png',
-    title:'News',
-    window:winNews
-});
+
 
 
 var winAudio = Titanium.UI.createWindow({  
 	url:'main_windows/gdsAudio.js'
 });
-var tab2 = Titanium.UI.createTab({  
+var tab1 = Titanium.UI.createTab({  
     icon:'gds_listen_2.png',
     title:'Shows',
     window:winAudio
+});
+
+var winNews = Titanium.UI.createWindow({  
+	url:'main_windows/gdsNews.js'
+});
+var tab2 = Titanium.UI.createTab({  
+    icon:'gds_rss.png',
+    title:'News',
+    window:winNews
 });
 
 var winTwitter = Titanium.UI.createWindow({  
@@ -55,6 +57,13 @@ var tab4 = Titanium.UI.createTab({
     title:'Email Us',
     window:winEmail
 });
+
+if (Titanium.Platform.name == 'android') {
+	tab1.icon = '/images/gds_listen_2.png';
+	tab2.icon = '/images/gds_rss.png';
+	tab3.icon = '/images/gds_twitter.png';
+	tab4.icon = '/images/gds_email.png';
+}
 
 Ti.Media.defaultAudioSessionMode = Ti.Media.AUDIO_SESSION_MODE_PLAYBACK;
 

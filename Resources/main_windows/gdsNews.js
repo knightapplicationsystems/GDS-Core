@@ -18,6 +18,7 @@ var imgNav;
 win = Titanium.UI.currentWindow;
 win.backgroundImage = '../images/background.png'
 if (Titanium.Platform.name == 'android') {
+
 } else {
 	//Create DB
 	var db;
@@ -97,7 +98,45 @@ function hideIndicator() {
 
 getNews();
 if (Titanium.Platform.name == 'android') {
-	win.title = 'News';
+	try {
+		win.title = 'News';
+		var Admob = require('ti.admob');
+		var adMobView = Admob.createView({
+			publisherId : "a15021686c99134",
+			testing : false, // default is false
+			//top: 10, //optional
+			//left: 0, // optional
+			//right: 0, // optional
+			bottom : 0, // optional
+			adBackgroundColor : "FF8855", // optional
+			backgroundColorTop : "738000", //optional - Gradient background color at top
+			borderColor : "#000000", // optional - Border color
+			textColor : "#000000", // optional - Text color
+			urlColor : "#00FF00", // optional - URL color
+			linkColor : "#0000FF",
+			height:'75dp',
+			width:'480dp'//optional -  Link text color
+			//primaryTextColor: "blue", // deprecated -- now maps to textColor
+			//secondaryTextColor: "green" // deprecated -- now maps to linkColor
+
+		});
+		win.add(adMobView);
+		//AdMobView.requestTestAd();
+		//listener for adNotReceived
+		adMobView.addEventListener(Admob.AD_NOT_RECEIVED, function() {
+			//alert("ad not received");
+			Ti.API.info("ad not received");
+			try {
+
+			} catch (e) {
+				adMobView.requestAd();
+			}
+
+		});
+	} catch(e) {
+
+	}
+
 } else {
 
 	if (Ti.Platform.osname == 'ipad') {
@@ -265,7 +304,7 @@ function serviceResponse() {
 		Ti.API.warn("Captured Item Description: " + rss.description);
 
 		if (Titanium.Platform.name == 'android') {
-			row.height = 80;
+			row.height = '80dp';
 			var label = Ti.UI.createLabel({
 				text : rss.title,
 				color : 'White',
@@ -334,7 +373,7 @@ function serviceResponse() {
 	}
 	if (Titanium.Platform.name == 'android') {
 		tableview.top = 0;
-		tableview.height = 'auto';
+		tableview.height = '400dp';
 	} else {
 		hideIndicator();
 	}

@@ -84,7 +84,7 @@ if (Ti.Platform.osname == 'ipad') {
 		height : 44,
 		width : 768,
 		textAlign : 5,
-		text : str,
+		text : win.trackTitle,
 		backgroundImage : '../images/gds_iPad_blankgreen.png',
 		color : 'Black',
 		font : {
@@ -98,10 +98,10 @@ if (Ti.Platform.osname == 'ipad') {
 	lblTrackName = Titanium.UI.createLabel({
 		top : 0,
 		left : 0,
-		height : 30,
-		width : 320,
+		height : '30dp',
+		width : '320dp',
 		textAlign : 5,
-		text : str,
+		text : win.trackTitle,
 		backgroundImage : '../images/NAV_Header_BLANK.png',
 		color : 'Black',
 		font : {
@@ -129,7 +129,7 @@ strDesc = strDesc.replace(/&13/g, '');
 strDesc = strDesc.replace(/;/g, '');
 
 lblTrackDesc = Titanium.UI.createLabel({
-	top : 110,
+	top : '110dp',
 	left : 10,
 	height : 'auto',
 	width : 'auto',
@@ -152,8 +152,8 @@ if (Titanium.Platform.name == 'android') {
 		top : 10,
 		left : 0,
 		backgroundImage : '../images/key_play_pause.png',
-		height : 60,
-		width : 60
+		height : '60dp',
+		width : '60dp'
 	});
 	scrollView.add(btnPlay);
 

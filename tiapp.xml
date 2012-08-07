@@ -13,7 +13,7 @@
         <target device="android">true</target>
         <target device="blackberry">false</target>
     </deployment-targets>
-    <sdk-version>2.1.1.GA</sdk-version>
+    <sdk-version>2.0.1.GA2</sdk-version>
     <id>com.gds.com</id>
     <name>GDS</name>
     <version>1.0.1</version>
@@ -43,8 +43,9 @@
         </orientations>
     </iphone>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-        <tool-api-level>8</tool-api-level>
-        <manifest android:versionCode="2" android:versionName="1.0.1" android:installLocation="preferExternal">
+        <tool-api-level>13</tool-api-level>
+        <manifest android:installLocation="preferExternal"
+            android:versionCode="3" android:versionName="1.0.2">
             <uses-sdk android:minSdkVersion="7"/>
         </manifest>
     </android>
@@ -59,5 +60,6 @@
     <modules>
         <module platform="commonjs" version="2.0.5">ti.cloud</module>
         <module platform="android" version="2.0.5">ti.cloudpush</module>
+        <module platform="android" version="2.0.1">ti.admob</module>
     </modules>
 </ti:app>
