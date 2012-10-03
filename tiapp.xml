@@ -13,10 +13,10 @@
         <target device="android">true</target>
         <target device="blackberry">false</target>
     </deployment-targets>
-    <sdk-version>2.0.1.GA2</sdk-version>
+    <sdk-version>2.1.3.v20120915120319</sdk-version>
     <id>com.gds.com</id>
     <name>GDS</name>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <publisher>Knight Application Systems</publisher>
     <url>http://www.globaldancesession.com/</url>
     <description>Global Dance Sessions</description>
