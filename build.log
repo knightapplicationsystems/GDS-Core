@@ -4,6 +4,124 @@ Logfile initialized
 [INFO] Titanium SDK version: 2.1.3 (09/15/12 12:03 a77d91c)
 [INFO] Copying CommonJS modules...
 [INFO] Copying project resources..
+<<<<<<< HEAD
+=======
+[INFO] Detected change in tiapp.xml, or assets deleted. Forcing full re-build...
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/android/appicon.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/appicon.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/android/default.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/default.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/app.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/app.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/Archive.zip => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/Archive.zip
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/Arrow.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/Arrow.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/Arrow@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/Arrow@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/background.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/background.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/background@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/background@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/fb_.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/fb_.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/fb_@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/fb_@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/GDS_APP_HEADER.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/GDS_APP_HEADER.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/GDS_APP_HEADER@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/GDS_APP_HEADER@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/gds_iPad_blankgreen.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/gds_iPad_blankgreen.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/gds_iPad_blankgreen@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/gds_iPad_blankgreen@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/gds_iPad_emailus.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/gds_iPad_emailus.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/gds_iPad_emailus@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/gds_iPad_emailus@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/gds_iPad_HEADER.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/gds_iPad_HEADER.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/gds_iPad_HEADER@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/gds_iPad_HEADER@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/gds_iPad_news.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/gds_iPad_news.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/gds_iPad_news@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/gds_iPad_news@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/gds_iPad_shows.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/gds_iPad_shows.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/gds_iPad_shows@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/gds_iPad_shows@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/gds_iPad_twitter.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/gds_iPad_twitter.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/gds_iPad_twitter@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/gds_iPad_twitter@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/key_play_pause.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/key_play_pause.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/NAV_Header_BLANK.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/NAV_Header_BLANK.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/NAV_Header_BLANK@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/NAV_Header_BLANK@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/NAV_Header_EMAIL.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/NAV_Header_EMAIL.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/NAV_Header_EMAIL@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/NAV_Header_EMAIL@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/NAV_Header_NEWS.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/NAV_Header_NEWS.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/NAV_Header_NEWS@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/NAV_Header_NEWS@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/NAV_Header_SHOWS.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/NAV_Header_SHOWS.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/NAV_Header_SHOWS@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/NAV_Header_SHOWS@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/NAV_Header_TWITTER.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/NAV_Header_TWITTER.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/NAV_Header_TWITTER@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/NAV_Header_TWITTER@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/twit_.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/twit_.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/archive/twit_@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/archive/twit_@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/config/config.xml => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/config/config.xml
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/email.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/email.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/email@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/email@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/android/arrow.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/android/arrow.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/android/background.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/android/background.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/android/blank.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/android/blank.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/android/email.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/android/email.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/android/listen.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/android/listen.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/android/rss.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/android/rss.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/android/twitter.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/android/twitter.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/arrow.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/arrow.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/arrow@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/arrow@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/background.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/background.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/background@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/background@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/blank.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/blank.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/blank@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/blank@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/email.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/email.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/email@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/email@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/fb.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/fb.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/fb@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/fb@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/header.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/header.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/header@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/header@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/news.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/news.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/news@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/news@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/shows.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/shows.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/shows@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/shows@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/tablet/background.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/tablet/background.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/tablet/background@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/tablet/background@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/tablet/blank.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/tablet/blank.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/tablet/blank@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/tablet/blank@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/tablet/email.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/tablet/email.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/tablet/email@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/tablet/email@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/tablet/header.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/tablet/header.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/tablet/header@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/tablet/header@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/tablet/news.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/tablet/news.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/tablet/news@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/tablet/news@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/tablet/shows.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/tablet/shows.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/tablet/shows@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/tablet/shows@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/tablet/twitter.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/tablet/twitter.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/tablet/twitter@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/tablet/twitter@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/twitter.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/twitter.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/images/twitter@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/images/twitter@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/listen.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/listen.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/listen@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/listen@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/android/audio.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/android/audio.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/android/audio_player.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/android/audio_player.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/android/email.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/android/email.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/android/facebook.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/android/facebook.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/android/gallery.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/android/gallery.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/android/livestream.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/android/livestream.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/android/news.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/android/news.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/android/news_view.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/android/news_view.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/android/tracklist.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/android/tracklist.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/android/twitter.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/android/twitter.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/android/youtube.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/android/youtube.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/iPad/audio.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/iPad/audio.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/iPad/email.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/iPad/email.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/iPad/facebook.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/iPad/facebook.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/iPad/gallery.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/iPad/gallery.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/iPad/livestream.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/iPad/livestream.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/iPad/news.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/iPad/news.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/iPad/news_view.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/iPad/news_view.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/iPad/twitter.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/iPad/twitter.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/iPad/youtube.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/iPad/youtube.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/iPhone/audio.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/iPhone/audio.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/iPhone/email.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/iPhone/email.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/iPhone/facebook.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/iPhone/facebook.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/iPhone/gallery.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/iPhone/gallery.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/iPhone/livestream.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/iPhone/livestream.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/iPhone/news.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/iPhone/news.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/iPhone/news_view.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/iPhone/news_view.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/iPhone/twitter.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/iPhone/twitter.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/main_windows/iPhone/youtube.js => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/main_windows/iPhone/youtube.js
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/rss.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/rss.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/rss@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/rss@2x.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/twitter.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/twitter.png
+[TRACE] COPYING CREATED FILE: /Users/thesargenator/Titanium/GDS/Resources/twitter@2x.png => /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/twitter@2x.png
+>>>>>>> master
 [TRACE] Generating Java Classes
 [DEBUG] Processing Android resource drawables
 [TRACE] COPYING FILE: /Users/thesargenator/Titanium/GDS/Resources/android/images/res-long-port-hdpi/gds_email.png => /Users/thesargenator/Titanium/GDS/build/android/res/drawable-long-port-hdpi/gds_email_6cbb0a7b1d.png
@@ -26,7 +144,11 @@ Logfile initialized
 [TRACE] COPYING FILE: /Users/thesargenator/Titanium/GDS/Resources/android/images/res-notlong-port-mdpi/gds_listen_2.png => /Users/thesargenator/Titanium/GDS/build/android/res/drawable-notlong-port-mdpi/gds_listen_2_eb88341ea5.png
 [TRACE] COPYING FILE: /Users/thesargenator/Titanium/GDS/Resources/android/images/res-notlong-port-mdpi/gds_rss.png => /Users/thesargenator/Titanium/GDS/build/android/res/drawable-notlong-port-mdpi/gds_rss_453c7b7b21.png
 [TRACE] COPYING FILE: /Users/thesargenator/Titanium/GDS/Resources/android/images/res-notlong-port-mdpi/gds_twitter.png => /Users/thesargenator/Titanium/GDS/build/android/res/drawable-notlong-port-mdpi/gds_twitter_24575265b3.png
+<<<<<<< HEAD
 [DEBUG] found special platform files dir = /Users/thesargenator/Titanium/GDS/platform/android
+=======
+[DEBUG] app stylesheet => /Users/thesargenator/Titanium/GDS/build/android/gen/com/gds/com/ApplicationStylesheet.java
+>>>>>>> master
 [DEBUG] copying app icon: /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/appicon.png
 [DEBUG] generating theme.xml
 [DEBUG] found drawable-long-land-hdpi splash screen at /Users/thesargenator/Titanium/GDS/Resources/android/images/res-long-land-hdpi/default.png
@@ -50,15 +172,25 @@ Logfile initialized
 [DEBUG] found drawable-notlong-port-mdpi splash screen at /Users/thesargenator/Titanium/GDS/Resources/android/images/res-notlong-port-mdpi/default.png
 [DEBUG] copying /Users/thesargenator/Titanium/GDS/Resources/android/images/res-notlong-port-mdpi/default.png splash screen to /Users/thesargenator/Titanium/GDS/build/android/res/drawable-notlong-port-mdpi/background.png
 [DEBUG] found splash screen at /Users/thesargenator/Titanium/GDS/build/android/bin/assets/Resources/default.png
+<<<<<<< HEAD
 [INFO] Detected custom ApplicationManifest.xml -- no Titanium version migration supported
 [DEBUG] Added 'screenSize' to <activity android:configChanges> because targeted api level 13 is >= 13
 [TRACE] Writing out AndroidManifest.xml
+=======
+[DEBUG] Added 'screenSize' to <activity android:configChanges> because targeted api level 13 is >= 13
+[TRACE] Writing out AndroidManifest.xml
+[DEBUG] adding /Users/thesargenator/Titanium/GDS/build/android/gen/com/gds/com/ApplicationStylesheet.java to javac build list
+>>>>>>> master
 [DEBUG] adding /Users/thesargenator/Titanium/GDS/build/android/gen/com/gds/com/AssetCryptImpl.java to javac build list
 [DEBUG] adding /Users/thesargenator/Titanium/GDS/build/android/gen/com/gds/com/GdsActivity.java to javac build list
 [DEBUG] adding /Users/thesargenator/Titanium/GDS/build/android/gen/com/gds/com/GdsAppInfo.java to javac build list
 [DEBUG] adding /Users/thesargenator/Titanium/GDS/build/android/gen/com/gds/com/GdsApplication.java to javac build list
 [DEBUG] adding /Users/thesargenator/Titanium/GDS/build/android/gen/com/gds/com/R.java to javac build list
+<<<<<<< HEAD
 [DEBUG] Building Java Sources: "/Users/thesargenator/Titanium/GDS/build/android/gen/com/gds/com/AssetCryptImpl.java" "/Users/thesargenator/Titanium/GDS/build/android/gen/com/gds/com/GdsActivity.java" "/Users/thesargenator/Titanium/GDS/build/android/gen/com/gds/com/GdsAppInfo.java" "/Users/thesargenator/Titanium/GDS/build/android/gen/com/gds/com/GdsApplication.java" "/Users/thesargenator/Titanium/GDS/build/android/gen/com/gds/com/R.java"
+=======
+[DEBUG] Building Java Sources: "/Users/thesargenator/Titanium/GDS/build/android/gen/com/gds/com/ApplicationStylesheet.java" "/Users/thesargenator/Titanium/GDS/build/android/gen/com/gds/com/AssetCryptImpl.java" "/Users/thesargenator/Titanium/GDS/build/android/gen/com/gds/com/GdsActivity.java" "/Users/thesargenator/Titanium/GDS/build/android/gen/com/gds/com/GdsAppInfo.java" "/Users/thesargenator/Titanium/GDS/build/android/gen/com/gds/com/GdsApplication.java" "/Users/thesargenator/Titanium/GDS/build/android/gen/com/gds/com/R.java"
+>>>>>>> master
 [INFO] Compiling Android Resources... This could take some time
 [DEBUG] Android classes.dex built
 [DEBUG] creating unsigned apk: /Users/thesargenator/Titanium/GDS/build/android/bin/app-unsigned.apk
@@ -102,10 +234,15 @@ Logfile initialized
 [DEBUG] from resource zip => assets/Resources/images/android/blank.png
 [DEBUG] from resource zip => assets/Resources/images/android/email.png
 [DEBUG] from resource zip => assets/Resources/images/android/listen.png
+<<<<<<< HEAD
 [DEBUG] from resource zip => assets/Resources/images/android/more.png
 [DEBUG] from resource zip => assets/Resources/images/android/rss.png
 [DEBUG] from resource zip => assets/Resources/images/android/twitter.png
 [DEBUG] from resource zip => assets/Resources/images/android/youtube.png
+=======
+[DEBUG] from resource zip => assets/Resources/images/android/rss.png
+[DEBUG] from resource zip => assets/Resources/images/android/twitter.png
+>>>>>>> master
 [DEBUG] from resource zip => assets/Resources/images/tablet/background.png
 [DEBUG] from resource zip => assets/Resources/images/tablet/background@2x.png
 [DEBUG] from resource zip => assets/Resources/images/tablet/blank.png
@@ -122,24 +259,33 @@ Logfile initialized
 [DEBUG] from resource zip => assets/Resources/images/tablet/twitter@2x.png
 [DEBUG] from resource zip => assets/Resources/images/arrow.png
 [DEBUG] from resource zip => assets/Resources/images/arrow@2x.png
+<<<<<<< HEAD
 [DEBUG] from resource zip => assets/Resources/images/arrow_circle_right.png
 [DEBUG] from resource zip => assets/Resources/images/arrow_circle_right@2x.png
+=======
+>>>>>>> master
 [DEBUG] from resource zip => assets/Resources/images/background.png
 [DEBUG] from resource zip => assets/Resources/images/background@2x.png
 [DEBUG] from resource zip => assets/Resources/images/blank.png
 [DEBUG] from resource zip => assets/Resources/images/blank@2x.png
 [DEBUG] from resource zip => assets/Resources/images/email.png
 [DEBUG] from resource zip => assets/Resources/images/email@2x.png
+<<<<<<< HEAD
 [DEBUG] from resource zip => assets/Resources/images/facebook.png
+=======
+>>>>>>> master
 [DEBUG] from resource zip => assets/Resources/images/fb.png
 [DEBUG] from resource zip => assets/Resources/images/fb@2x.png
 [DEBUG] from resource zip => assets/Resources/images/header.png
 [DEBUG] from resource zip => assets/Resources/images/header@2x.png
 [DEBUG] from resource zip => assets/Resources/images/news.png
 [DEBUG] from resource zip => assets/Resources/images/news@2x.png
+<<<<<<< HEAD
 [DEBUG] from resource zip => assets/Resources/images/no_mus_img.jpg
 [DEBUG] from resource zip => assets/Resources/images/optContact.png
 [DEBUG] from resource zip => assets/Resources/images/optTwitter.png
+=======
+>>>>>>> master
 [DEBUG] from resource zip => assets/Resources/images/shows.png
 [DEBUG] from resource zip => assets/Resources/images/shows@2x.png
 [DEBUG] from resource zip => assets/Resources/images/twitter.png
@@ -150,14 +296,20 @@ Logfile initialized
 [DEBUG] from resource zip => assets/Resources/email@2x.png
 [DEBUG] from resource zip => assets/Resources/listen.png
 [DEBUG] from resource zip => assets/Resources/listen@2x.png
+<<<<<<< HEAD
 [DEBUG] from resource zip => assets/Resources/more.png
 [DEBUG] from resource zip => assets/Resources/more@2x.png
+=======
+>>>>>>> master
 [DEBUG] from resource zip => assets/Resources/rss.png
 [DEBUG] from resource zip => assets/Resources/rss@2x.png
 [DEBUG] from resource zip => assets/Resources/twitter.png
 [DEBUG] from resource zip => assets/Resources/twitter@2x.png
+<<<<<<< HEAD
 [DEBUG] from resource zip => assets/Resources/youtube.png
 [DEBUG] from resource zip => assets/Resources/youtube@2x.png
+=======
+>>>>>>> master
 [DEBUG] from resource zip => assets/app.json
 [DEBUG] from resource zip => assets/index.json
 [DEBUG] from resource zip => assets/tiapp.xml

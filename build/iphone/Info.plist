@@ -69,6 +69,10 @@
 	<key>UISupportedInterfaceOrientations~ipad</key>
 		<array>
 		<string>UIInterfaceOrientationPortrait</string>
+<<<<<<< HEAD
+=======
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+>>>>>>> master
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 		<array>
