@@ -78,45 +78,6 @@ function loadConfig() {
 
 }
 
-//AdMob
-try {
-
-	var Admob = require('ti.admob');
-	var adMobView = Admob.createView({
-		publisherId : "a15021686c99134",
-		testing : false, // default is false
-		//top: 10, //optional
-		//left: 0, // optional
-		//right: 0, // optional
-		bottom : 0, // optional
-		adBackgroundColor : "FF8855", // optional
-		backgroundColorTop : "738000", //optional - Gradient background color at top
-		borderColor : "#000000", // optional - Border color
-		textColor : "#000000", // optional - Text color
-		urlColor : "#00FF00", // optional - URL color
-		linkColor : "#0000FF",
-		height : '75dp',
-		width : '480dp'//optional -  Link text color
-		//primaryTextColor: "blue", // deprecated -- now maps to textColor
-		//secondaryTextColor: "green" // deprecated -- now maps to linkColor
-
-	});
-	win.add(adMobView);
-	//AdMobView.requestTestAd();
-	//listener for adNotReceived
-	adMobView.addEventListener(Admob.AD_NOT_RECEIVED, function() {
-		//alert("ad not received");
-		Ti.API.info("ad not received");
-		try {
-
-		} catch (e) {
-			adMobView.requestAd();
-		}
-
-	});
-} catch(e) {
-
-}
 
 win.backgroundImage = '/images/android/background.png'
 
@@ -139,7 +100,7 @@ failureMessage = Titanium.UI.createAlertDialog({
 actInd = Ti.UI.createActivityIndicator({
 	message : 'Loading...',
 	color : 'white',
-	height : 60,
+	height : '60dp',
 	width : 'auto'
 });
 win.add(actInd);
@@ -180,7 +141,7 @@ function serviceResponse() {
 
 	for (var i in info) {
 		row = Ti.UI.createTableViewRow({
-			height : 80,
+			height : '80dp',
 			backgroundColor : 'transparent',
 			hasChild : true,
 			rightImage : '/images/android/arrow.png'
@@ -195,8 +156,8 @@ function serviceResponse() {
 			text : fStripped,
 			color : 'White',
 			textAlign : 'left',
-			left : 65,
-			top : 25,
+			left : '65dp',
+			top : '30dp',
 			height : 'auto',
 			font : {
 				fontWeight : 'bold',
@@ -206,10 +167,10 @@ function serviceResponse() {
 
 		var image = Ti.UI.createImageView({
 			image : info[i].artwork_url,
-			height : 50,
-			width : 50,
-			top : 15,
-			left : 10
+			height : '50dp',
+			width : '50dp',
+			top : '15dp',
+			left : '10dp'
 		});
 
 		Ti.API.warn(info[i].title);
@@ -222,13 +183,13 @@ function serviceResponse() {
 
 	tableview = Titanium.UI.createTableView({
 		data : tableData,
-		height : 280,
+		height : 'auto',
 		separatorColor : '#C9EE00',
 		backgroundColor : 'transparent'
 	});
 
 	tableview.top = 0;
-	tableview.height = '400dp';
+
 
 	tableview.addEventListener('click', function(e) {
 
@@ -282,12 +243,12 @@ function serviceError() {
 	lblUnableToConnect = Titanium.UI.createLabel({
 		text : 'Sorry we are unable to connect you to ' + source + ' at this time, please try again later',
 		height : 'auto',
-		top : 150,
-		width : 748,
-		left : 10,
+		top : '150dp',
+		width : 'auto',
+		left : '10dp',
 		color : 'White',
 		font : {
-			fontSize : 20,
+			fontSize : '20dp',
 			fontStyle : 'normal',
 			fontWeight : 'bold'
 		},
@@ -295,14 +256,14 @@ function serviceError() {
 	});
 
 	btnRetry = Titanium.UI.createButton({
-		top : 200,
-		left : 10,
-		width : 300,
-		height : 40,
+		top : '200dp',
+		left : '10dp',
+		width : '300dp',
+		height : '40dp',
 		color : textColor,
 		title : 'Retry',
 		font : {
-			fontSize : 30,
+			fontSize : '30dp',
 			fontFamily : 'Arial',
 			fontWeight : 'bold'
 		},

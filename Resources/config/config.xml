@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
 <config>
 	<twitter username="GlobalDanceSess"></twitter>
-	<facebook username="globaldance"></facebook>
+	<facebook username="globaldance" link="http://www.facebook.com/"></facebook>
 	<audioSource source="soundcloud" displayOption="coverflow"></audioSource>
 	<soundcloud username="globaldancesession" clientID="7a0984726d0eefbb310771c4c02116a8"></soundcloud>
 	<artist name="GDS"></artist>
+	<youtube feed="https://gdata.youtube.com/feeds/api/users/GlobalDanceSession/uploads"></youtube>
 	<feed url="http://www.globaldancesession.com/rss/"></feed>
+	<moreTab required="Yes" option1="Facebook" option1Link= "http://www.facebook.com/globaldance" option1Img="/images/facebook.png" option2="Twitter" option2Link= "https://twitter.com/GlobalDanceSess" option2Img="/images/optTwitter.png" option3="Contact" option3Link= "nil" option3Img="/images/optContact.png" ></moreTab>
 	<backGroundImage location= "/images/background.png"></backGroundImage>
-	<appIcon></appIcon>
 	<appHeader location="/images/appHeader.png"></appHeader>
 	<tabNameAudio tabAudio="Shows"></tabNameAudio>
 	<email1 text1="RADIO STATIONS " text2="Want to air GDS on your frequency? " address="radio@globaldancesession.com"></email1>

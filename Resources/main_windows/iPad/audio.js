@@ -101,6 +101,26 @@ failureMessage = Titanium.UI.createAlertDialog({
 	message : 'Alert Message'
 });
 
+
+btnRefresh = Ti.UI.createButton({
+	image:'/images/arrow_circle_right.png',
+	top:15,
+	right:10,
+	height:'25dp',
+	width:'25dp',
+	zIndex:20
+})
+
+btnRefresh.addEventListener('click', function(e){
+	images = [];
+	lblTrackTitle.text = '';
+	win.remove(coverFlow);
+	//showIndicator();
+	callService();
+});
+
+win.add(btnRefresh);
+
 //Activity Indicator
 function showIndicator() {
 	actInd = Ti.UI.createActivityIndicator({
@@ -133,23 +153,23 @@ function hideIndicator() {
 }
 
 //Header & Navigation Bar Image Load (iPhone/iPod and iPad)
-
 imgNav = Ti.UI.createLabel({
 	top : 0,
-	height : 50,
-	left : 0
+	text : 'SHOWS',
+	height : '60dp',
+	width : '768dp',
+	left : 0,
+	textAlign : 'center',
+	color : 'black',
+	backgroundImage : '/images/tablet/blank.png',
+	font : {
+		fontWeight : 'bold',
+		fontStyle : 'Sans Serif',
+		fontSize : 25
+	}
 });
 
 win.barImage = '/images/tablet/header.png';
-imgNav.backgroundImage = '/images/tablet/shows.png';
-
-//Load Advert View
-var adView = Titanium.UI.iOS.createAdView({
-	width : 'auto',
-	height : 50,
-	bottom : 0,
-	zIndex : 10
-});
 
 //************ The above completes the UI load **********************
 
@@ -339,7 +359,7 @@ function showTrackList() {
 	});
 
 	var play = Titanium.UI.createButton({
-		title : 'Play',
+		title : 'Stream',
 		height : 30,
 		top : '8dp',
 		width : 110,
@@ -424,7 +444,5 @@ function serviceError() {
 
 }
 
-//Add elements to Window
-win.add(adView);
 win.add(imgNav);
 

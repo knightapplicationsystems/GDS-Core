@@ -84,45 +84,7 @@ function loadConfig() {
 //Background image
 win.backgroundImage = '/images/android/background.png'
 
-//AdMob
-try {
 
-	var Admob = require('ti.admob');
-	var adMobView = Admob.createView({
-		publisherId : "a15021686c99134",
-		testing : false, // default is false
-		//top: 10, //optional
-		//left: 0, // optional
-		//right: 0, // optional
-		bottom : 0, // optional
-		adBackgroundColor : "FF8855", // optional
-		backgroundColorTop : "738000", //optional - Gradient background color at top
-		borderColor : "#000000", // optional - Border color
-		textColor : "#000000", // optional - Text color
-		urlColor : "#00FF00", // optional - URL color
-		linkColor : "#0000FF",
-		height : '75dp',
-		width : '480dp'//optional -  Link text color
-		//primaryTextColor: "blue", // deprecated -- now maps to textColor
-		//secondaryTextColor: "green" // deprecated -- now maps to linkColor
-
-	});
-	win.add(adMobView);
-	//AdMobView.requestTestAd();
-	//listener for adNotReceived
-	adMobView.addEventListener(Admob.AD_NOT_RECEIVED, function() {
-		//alert("ad not received");
-		Ti.API.info("ad not received");
-		try {
-
-		} catch (e) {
-			adMobView.requestAd();
-		}
-
-	});
-} catch(e) {
-
-}
 
 
 //Display Elements
@@ -186,44 +148,9 @@ lblPromo.addEventListener('click', function(e) {
 	emailDialog.open();
 });
 
-var lblFB = Titanium.UI.createLabel({
-	top : 580,
-	height : 'auto',
-	left : 50,
-	color : 'White',
-	font : {
-		fontSize : 18,
-		fontStyle : 'normal'
-	},
-	text : "'Like' us on Facebook"
 
-});
 
-btnFB = Titanium.UI.createButton({
-	top : 580,
-	height : 27,
-	width : 27,
-	left : 10,
-	backgroundImage : '/images/fb.png'
-
-});
-
-btnFB.addEventListener('click', function(e) {
-
-	var viewFB = Titanium.UI.createWindow({
-		url : 'news_view.js'
-	});
-
-	viewFB.linkURL = 'http://www.facebook.com/' + fb;
-
-	Titanium.UI.currentTab.open(viewFB, {
-		animated : true
-	});
-
-});
 
 win.add(lblRadio);
 win.add(lblEvents);
 win.add(lblPromo);
-win.add(btnFB);
-win.add(lblFB);

@@ -87,22 +87,24 @@ win.backgroundImage = '/images/tablet/background.png'
 //Bar image
 win.barImage = '/images/tablet/header.png';
 
-//iAd
-adView = Titanium.UI.iOS.createAdView({
-	width : 'auto',
-	height : 50,
-	bottom : 0
-});
-win.add(adView);
 
-//Nav Bar
+
+//Header & Navigation Bar Image Load (iPhone/iPod and iPad)
 imgNav = Ti.UI.createLabel({
 	top : 0,
-	height : 50,
+	text : 'CONTACT',
+	height : '60dp',
+	width : '768dp',
 	left : 0,
-	backgroundImage : '/images/tablet/email.png'
+	textAlign : 'center',
+	color : 'black',
+	backgroundImage : '/images/tablet/blank.png',
+	font : {
+		fontWeight : 'bold',
+		fontStyle : 'Sans Serif',
+		fontSize : 25
+	}
 });
-
 win.add(imgNav);
 
 //Display Elements

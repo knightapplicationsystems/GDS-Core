@@ -84,26 +84,7 @@ function loadConfig() {
 //Background image
 win.backgroundImage = '/images/background.png'
 
-//Bar image
-win.barImage = '/images/header.png';
-
-//iAd
-adView = Titanium.UI.iOS.createAdView({
-	width : 'auto',
-	height : 50,
-	bottom : 0
-});
-win.add(adView);
-
-//Nav Bar
-imgNav = Ti.UI.createLabel({
-	top : 0,
-	height : 50,
-	left : 0,
-	backgroundImage : '/images/email.png'
-});
-
-win.add(imgNav);
+win.title = 'Contact Us';
 
 //Display Elements
 lblRadio = Titanium.UI.createLabel({
@@ -176,31 +157,8 @@ var lblFB = Titanium.UI.createLabel({
 
 });
 
-btnFB = Titanium.UI.createButton({
-	top : 255,
-	height : 27,
-	width : 27,
-	left : 10,
-	backgroundImage : '/images/fb.png'
-
-});
-
-btnFB.addEventListener('click', function(e) {
-
-	var viewFB = Titanium.UI.createWindow({
-		url : 'news_view.js'
-	});
-
-	viewFB.linkURL = 'http://www.facebook.com/' + fb;
-
-	Titanium.UI.currentTab.open(viewFB, {
-		animated : true
-	});
-
-});
 
 win.add(lblRadio);
 win.add(lblEvents);
 win.add(lblPromo);
-win.add(btnFB);
-win.add(lblFB);
+

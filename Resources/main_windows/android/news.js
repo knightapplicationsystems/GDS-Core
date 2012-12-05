@@ -55,46 +55,6 @@ function loadConfig() {
 
 //Window Loading section
 
-//AdMob
-try {
-
-	var Admob = require('ti.admob');
-	var adMobView = Admob.createView({
-		publisherId : "a15021686c99134",
-		testing : false, // default is false
-		//top: 10, //optional
-		//left: 0, // optional
-		//right: 0, // optional
-		bottom : 0, // optional
-		adBackgroundColor : "FF8855", // optional
-		backgroundColorTop : "738000", //optional - Gradient background color at top
-		borderColor : "#000000", // optional - Border color
-		textColor : "#000000", // optional - Text color
-		urlColor : "#00FF00", // optional - URL color
-		linkColor : "#0000FF",
-		height : '75dp',
-		width : '480dp'//optional -  Link text color
-		//primaryTextColor: "blue", // deprecated -- now maps to textColor
-		//secondaryTextColor: "green" // deprecated -- now maps to linkColor
-
-	});
-	win.add(adMobView);
-	//AdMobView.requestTestAd();
-	//listener for adNotReceived
-	adMobView.addEventListener(Admob.AD_NOT_RECEIVED, function() {
-		//alert("ad not received");
-		Ti.API.info("ad not received");
-		try {
-
-		} catch (e) {
-			adMobView.requestAd();
-		}
-
-	});
-} catch(e) {
-
-}
-
 //Activity Indicator
 
 actInd = Ti.UI.createActivityIndicator({
@@ -136,7 +96,7 @@ function serviceResponse() {
 		Ti.API.warn("Processing Item " + c);
 
 		var row = Ti.UI.createTableViewRow({
-			height : 80,
+			height : '80dp',
 			backgroundColor : 'transparent',
 			hasChild : true,
 			rightImage : '/images/android/arrow.png'
@@ -162,8 +122,8 @@ function serviceResponse() {
 			text : rss.title,
 			color : 'White',
 			textAlign : 'left',
-			left : 10,
-			top : 25,
+			left : '10dp',
+			top : '30dp',
 			height : 'auto',
 			font : {
 				fontWeight : 'bold',
@@ -182,13 +142,13 @@ function serviceResponse() {
 
 	tableview = Titanium.UI.createTableView({
 		data : data,
-		height : 280,
+		height : 'auto',
 		separatorColor : '#C9EE00',
 		backgroundColor : 'transparent'
 	});
 
 	tableview.top = 0;
-	tableview.height = '400dp';
+
 
 	Titanium.UI.currentWindow.add(tableview);
 
@@ -219,18 +179,18 @@ function serviceResponse() {
 //This is called if we can't get the host response
 function serviceError() {
 	hideIndicator();
-	failureMessage.message = "Unable to connect to " + source + ", Please try again later (For best results use a 3G or WiFi connection)";
+	failureMessage.message = "Unable to connect to the news feed, Please try again later (For best results use a 3G or WiFi connection)";
 	failureMessage.show();
 
 	lblUnableToConnect = Titanium.UI.createLabel({
-		text : 'Sorry we are unable to connect you to ' + source + ' at this time, please try again later',
+		text : 'Sorry we are unable to connect you to the news feed at this time, please try again later',
 		height : 'auto',
-		top : 150,
-		width : 748,
-		left : 10,
+		top : '150dp',
+		width : 'auto',
+		left : '10dp',
 		color : 'White',
 		font : {
-			fontSize : 20,
+			fontSize : '20dp',
 			fontStyle : 'normal',
 			fontWeight : 'bold'
 		},
@@ -238,14 +198,14 @@ function serviceError() {
 	});
 
 	btnRetry = Titanium.UI.createButton({
-		top : 200,
-		left : 10,
-		width : 300,
-		height : 40,
+		top : '200dp',
+		left : '10dp',
+		width : '300dp',
+		height : '40dp',
 		color : textColor,
 		title : 'Retry',
 		font : {
-			fontSize : 30,
+			fontSize : '30dp',
 			fontFamily : 'Arial',
 			fontWeight : 'bold'
 		},

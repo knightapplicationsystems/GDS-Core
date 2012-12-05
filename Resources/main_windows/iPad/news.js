@@ -58,24 +58,43 @@ function loadConfig() {
 //Background Image
 win.backgroundImage = "/images/tablet/background.png";
 
-//Load Advert View
-adView = Titanium.UI.iOS.createAdView({
-	width : 'auto',
-	height : 50,
-	bottom : 0,
-	zIndex : 10
+
+btnRefresh = Ti.UI.createButton({
+	image:'/images/arrow_circle_right.png',
+	top:15,
+	right:10,
+	height:'25dp',
+	width:'25dp',
+	zIndex:20
+})
+
+btnRefresh.addEventListener('click', function(e){
+	data = [];
+	win.remove(tableview);
+	//showIndicator();
+	getNews();
 });
-win.add(adView);
+
+win.add(btnRefresh);
 
 //Bar image
 win.barImage = '/images/tablet/header.png';
 
-//Nav Image
+//Header & Navigation Bar Image Load (iPhone/iPod and iPad)
 imgNav = Ti.UI.createLabel({
 	top : 0,
-	height : 50,
+	text : 'NEWS',
+	height : '60dp',
+	width : '768dp',
 	left : 0,
-	backgroundImage : '/images/tablet/news.png'
+	textAlign : 'center',
+	color : 'black',
+	backgroundImage : '/images/tablet/blank.png',
+	font : {
+		fontWeight : 'bold',
+		fontStyle : 'Sans Serif',
+		fontSize : 25
+	}
 });
 
 win.add(imgNav);
@@ -135,7 +154,7 @@ function serviceResponse() {
 			color : 'White',
 			textAlign : 'left',
 			left : 10,
-			top : 8,
+			top : 30,
 			height : 18,
 			font : {
 				fontWeight : 'bold',
@@ -154,13 +173,11 @@ function serviceResponse() {
 
 	var tableview = Titanium.UI.createTableView({
 		data : data,
-
-		height : 700,
+		top:60,
+		height : 'auto',
 		separatorColor : borders,
 		backgroundColor : 'transparent'
 	});
-
-	tableview.top = 72;
 
 	Titanium.UI.currentWindow.add(tableview);
 

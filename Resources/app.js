@@ -42,11 +42,11 @@ if (Titanium.Platform.osname == 'ipad') {
 	var winNews = Titanium.UI.createWindow({
 		url : 'main_windows/iPad/news.js'
 	});
-	var winTwitter = Titanium.UI.createWindow({
-		url : 'main_windows/iPad/twitter.js'
+	var winYoutube = Titanium.UI.createWindow({
+		url : 'main_windows/iPad/youtube.js'
 	});
-	var winEmail = Titanium.UI.createWindow({
-		url : 'main_windows/iPad/email.js'
+	var winMore = Titanium.UI.createWindow({
+		url : 'main_windows/iPad/more.js'
 	});
 
 } else {
@@ -56,11 +56,11 @@ if (Titanium.Platform.osname == 'ipad') {
 	var winNews = Titanium.UI.createWindow({
 		url : 'main_windows/iPhone/news.js'
 	});
-	var winTwitter = Titanium.UI.createWindow({
-		url : 'main_windows/iPhone/twitter.js'
+	var winYoutube = Titanium.UI.createWindow({
+		url : 'main_windows/iPhone/youtube.js'
 	});
-	var winEmail = Titanium.UI.createWindow({
-		url : 'main_windows/iPhone/email.js'
+	var winMore = Titanium.UI.createWindow({
+		url : 'main_windows/iPhone/more.js'
 	});
 }
 
@@ -72,11 +72,11 @@ if (Titanium.Platform.name == 'android')
 	var winNews = Titanium.UI.createWindow({
 		url : 'main_windows/android/news.js'
 	});
-	var winTwitter = Titanium.UI.createWindow({
-		url : 'main_windows/android/twitter.js'
+	var winYoutube = Titanium.UI.createWindow({
+		url : 'main_windows/android/youtube.js'
 	});
-	var winEmail = Titanium.UI.createWindow({
-		url : 'main_windows/android/email.js'
+	var winMore = Titanium.UI.createWindow({
+		url : 'main_windows/android/more.js'
 	});
 }
 
@@ -93,23 +93,23 @@ var tab2 = Titanium.UI.createTab({
 });
 
 var tab3 = Titanium.UI.createTab({
-	icon : 'twitter.png',
-	title : 'Twitter',
-	window : winTwitter
+	icon : 'youtube.png',
+	title : 'YouTube',
+	window : winYoutube
 });
 
 var tab4 = Titanium.UI.createTab({
-	icon : 'email.png',
-	title : 'Email Us',
-	window : winEmail
+	icon : 'more.png',
+	title : 'More',
+	window : winMore
 });
 
 //Tab Icons
 if (Titanium.Platform.name == 'android') {
 	tab1.icon = '/images/android/listen.png';
 	tab2.icon = '/images/android/rss.png';
-	tab3.icon = '/images/android/twitter.png';
-	tab4.icon = '/images/android/email.png';
+	tab3.icon = '/images/android/youtube.png';
+	tab4.icon = '/images/android/more.png';
 }
 
 

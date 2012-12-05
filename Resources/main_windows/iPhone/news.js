@@ -16,6 +16,7 @@ var borders;
 var textColor;
 var lblUnableToConnect;
 var btnRetry;
+var tableview;
 
 //****************** UI Load **************************************
 //Window Loading section
@@ -55,17 +56,40 @@ function loadConfig() {
 
 //Window Loading section
 
+//Activity Indicator
+function showIndicator() {
+	actInd = Ti.UI.createActivityIndicator({
+		style : Titanium.UI.iPhone.ActivityIndicatorStyle.BIG,
+		message : 'Loading...',
+		color : 'white',
+		height : 60,
+		width : 'auto'
+	});
+
+	activityWindow = Ti.UI.createWindow({
+		width : 200,
+		height : 100
+	});
+
+	activityBg = Ti.UI.createView({
+		backgroundColor : "#000000",
+		opacity : 0.8,
+		borderRadius : 10
+	});
+
+	activityWindow.add(activityBg);
+	activityWindow.add(actInd);
+	activityWindow.open();
+	actInd.show();
+}
+
+function hideIndicator() {
+	activityWindow.close();
+}
+
 //Background Image
 win.backgroundImage = "/images/background.png";
 
-//Load Advert View
-adView = Titanium.UI.iOS.createAdView({
-	width : 'auto',
-	height : 50,
-	bottom : 0,
-	zIndex : 10
-});
-win.add(adView);
 
 //Bar image
 win.barImage = '/images/header.png';
@@ -73,20 +97,45 @@ win.barImage = '/images/header.png';
 //Nav Image
 imgNav = Ti.UI.createLabel({
 	top : 0,
+	text : 'NEWS',
 	height : '30dp',
 	width : '320dp',
 	left : 0,
 	textAlign : 'center',
-	color : 'white',
-	backgroundImage : '/images/news.png'
+	color : textColor,
+	backgroundImage : '/images/blank.png',
+	font : {
+		fontStyle : 'Sans Serif',
+		fontSize : 20
+	}
 });
 
 win.add(imgNav);
 
+btnRefresh = Ti.UI.createButton({
+	image:'/images/arrow_circle_right.png',
+	top:3,
+	right:10,
+	height:'25dp',
+	width:'25dp',
+	zIndex:20
+})
+
+btnRefresh.addEventListener('click', function(e){
+	data = [];
+	win.remove(tableview);
+	//showIndicator();
+	getNews();
+});
+
+win.add(btnRefresh);
+
+
 getNews();
 
 function getNews() {
-
+	showIndicator(); 
+	Ti.API.warn('Im here');
 	var xhr = Ti.Network.createHTTPClient();
 	Titanium.API.info(news);
 	xhr.open("GET", news);
@@ -97,14 +146,15 @@ function getNews() {
 }
 
 function serviceResponse() {
-
+	
+	Ti.API.warn('And now here');
 	var doc = this.responseXML.documentElement;
 
 	var items = doc.getElementsByTagName("item");
 	var x = 0;
 	Ti.API.warn(this.responseXML.documentElement);
 	Ti.API.warn("Received document response with " + items.length + " items");
-	Ti.API.warn(items);
+
 
 	for (var c = 0; c < items.length; c++) {
 
@@ -138,7 +188,7 @@ function serviceResponse() {
 			color : 'White',
 			textAlign : 'left',
 			left : 10,
-			top : 8,
+			top : 30,
 			height : 18,
 			font : {
 				fontWeight : 'bold',
@@ -154,11 +204,13 @@ function serviceResponse() {
 
 		Ti.API.warn("Finished loop for item " + c);
 	}
+	
+	
 
-	var tableview = Titanium.UI.createTableView({
+	tableview = Titanium.UI.createTableView({
 		data : data,
 
-		height : 280,
+		height : 'auto',
 		separatorColor : borders,
 		backgroundColor : 'transparent'
 	});
@@ -188,6 +240,8 @@ function serviceResponse() {
 		});
 
 	});
+	
+	hideIndicator();
 }
 
 //This is called if we can't get the host response

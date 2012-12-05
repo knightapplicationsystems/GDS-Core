@@ -1,0 +1,45 @@
+<?xml version="1.0" ?><manifest android:installLocation="preferExternal" android:versionCode="5" android:versionName="1.2.0" package="com.gds.com" xmlns:android="http://schemas.android.com/apk/res/android">
+	<uses-sdk android:minSdkVersion="7"/>
+
+	<!-- TI_MANIFEST -->
+
+	<application android:debuggable="false" android:icon="@drawable/appicon" android:label="GDS" android:name="GdsApplication">
+
+		<service android:name="com.appcelerator.cloud.push.PushService"/><receiver android:name="ti.cloudpush.IntentReceiver"/><receiver android:name="ti.cloudpush.CustomReceiver">
+					<intent-filter>
+						<action android:name="android.intent.action.BOOT_COMPLETED"/>
+						<action android:name="android.intent.action.USER_PRESENT"/>
+						<action android:name="com.appcelerator.cloud.push.PushService.MSG_ARRIVAL"/>
+						<category android:name="android.intent.category.HOME"/>
+					</intent-filter>
+					<meta-data android:name="com.appcelerator.cloud.push.BroadcastReceiver.ArrivalActivity" android:value="ti.cloudpush.CustomReceiver"/>
+				</receiver><activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:name="com.google.ads.AdActivity"/>
+
+		<activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="GDS" android:name=".GdsActivity" android:theme="@style/Theme.Titanium">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+
+		<activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTask" android:name="ti.modules.titanium.media.TiVideoActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+
+		<activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.appcelerator.titanium.TiActivity"/>
+		<activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.appcelerator.titanium.TiTranslucentActivity" android:theme="@android:style/Theme.Translucent"/>
+		<activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.appcelerator.titanium.TiModalActivity" android:theme="@android:style/Theme.Translucent"/>
+		<activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="ti.modules.titanium.ui.TiTabActivity"/>
+		<activity android:name="ti.modules.titanium.ui.android.TiPreferencesActivity"/>
+
+		<service android:exported="false" android:name="org.appcelerator.titanium.analytics.TiAnalyticsService"/>
+		
+
+	</application>
+
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	
+
+</manifest>

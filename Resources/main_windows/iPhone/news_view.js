@@ -43,13 +43,37 @@ function showIndicator() {
 function hideIndicator() {
 	activityWindow.close();
 }
- 
-webView = Titanium.UI.createWebView({
+
+
+createView();
+
+btnRefresh = Ti.UI.createButton({
+	image:'/images/arrow_circle_right.png'
+})
+
+win.setRightNavButton(btnRefresh);
+
+btnRefresh.addEventListener('click', function(e){
+	win.remove(webView);
+	createView()
+});
+
+//win.add(btnRefresh);
+showIndicator();
+function createView(){
+	
+	webView = Titanium.UI.createWebView({
 	url:win.linkURL,
-	height:'400dp',
+	height:'auto',
 	touchEnabled: true
 	});
-showIndicator();
+	
+	win.add(webView);
+	
+}
+
+ 
+
 webView.addEventListener('load',function(e)
 {
 	hideIndicator();
@@ -60,4 +84,3 @@ webView.addEventListener('load',function(e)
 
 
 
-win.add(webView);

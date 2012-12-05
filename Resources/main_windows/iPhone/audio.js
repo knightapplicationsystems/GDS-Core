@@ -21,10 +21,15 @@ var lblTrackTitle;
 var sound;
 var streamURL;
 var trackDesc;
+var trackID;
 var borders;
 var textColor;
 var lblUnableToConnect;
 var btnRetry;
+var btnRefresh;
+var dlURL;
+var btnLib;
+var id;
 
 //****************** UI Load **************************************
 //Window Loading section
@@ -133,23 +138,41 @@ function hideIndicator() {
 }
 
 //Header & Navigation Bar Image Load (iPhone/iPod and iPad)
-
+//Nav Image
 imgNav = Ti.UI.createLabel({
 	top : 0,
-	height : 50,
-	left : 0
+	text : 'SHOWS',
+	height : '30dp',
+	width : '320dp',
+	left : 0,
+	textAlign : 'center',
+	color : textColor,
+	backgroundImage : '/images/blank.png',
+	font : {
+		fontStyle : 'Sans Serif',
+		fontSize : 20
+	}
 });
-
 win.barImage = '/images/header.png';
-imgNav.backgroundImage = '/images/shows.png';
 
-//Load Advert View
-var adView = Titanium.UI.iOS.createAdView({
-	width : 'auto',
-	height : 50,
-	bottom : 0,
-	zIndex : 10
+btnRefresh = Ti.UI.createButton({
+	image : '/images/arrow_circle_right.png',
+	top : 3,
+	right : 10,
+	height : '25dp',
+	width : '25dp',
+	zIndex : 20
+})
+
+btnRefresh.addEventListener('click', function(e) {
+	images = [];
+	lblTrackTitle.text = '';
+	win.remove(coverFlow);
+	//showIndicator();
+	callService();
 });
+
+win.add(btnRefresh);
 
 //************ The above completes the UI load **********************
 
@@ -177,6 +200,7 @@ win.add(lblTrackTitle);
 
 //Service fires off the XHR request to the relevant host
 function callService() {
+	showIndicator();
 	var xhr = Titanium.Network.createHTTPClient();
 
 	xhr.onload = serviceResponse;
@@ -194,14 +218,15 @@ function serviceResponse() {
 	var hostResp;
 
 	hostResp = JSON.parse(this.responseText);
+	//var i = 0; i < 12; i++
 
 	for (var i in hostResp) {
-
+		//for (var i = 0; i < 12; i++) {
 
 		var str = hostResp[i].artwork_url;
-		
+
 		var diffImage = str.replace('large', 't500x500');
-		
+
 		Ti.API.warn(diffImage);
 
 		var name = diffImage;
@@ -219,9 +244,12 @@ function serviceResponse() {
 		top : '31dp'
 	});
 
+	hideIndicator();
+
 	coverFlow.addEventListener('change', function(e) {
 
 		trackTitle = hostResp[e.index].title;
+		trackID = hostResp[e.index].id;
 
 		var preStrippedText;
 		preStrippedText = trackTitle;
@@ -233,9 +261,10 @@ function serviceResponse() {
 	});
 
 	coverFlow.addEventListener('click', function(e) {
+		trackTitle = hostResp[e.index].title;
 		streamURL = hostResp[e.index].stream_url;
 		trackDesc = hostResp[e.index].description;
-
+		dlURL = hostResp[e.index].download_url;
 		showTrackList();
 		Ti.API.warn(streamURL);
 	});
@@ -331,17 +360,27 @@ function showTrackList() {
 		title : 'Done',
 		height : 30,
 		top : '8dp',
-		width : 110,
+		width : 90,
 		right : 10,
 		backgroundColor : 'black',
 		color : 'black'
 	});
 
-	var play = Titanium.UI.createButton({
-		title : 'Play',
+	var download = Titanium.UI.createButton({
+		title : 'Download',
 		height : 30,
 		top : '8dp',
-		width : 110,
+		width : 90,
+		left : 115,
+		backgroundColor : 'black',
+		color : 'black'
+	});
+
+	var play = Titanium.UI.createButton({
+		title : 'Stream',
+		height : 30,
+		top : '8dp',
+		width : 90,
 		left : 10,
 		backgroundColor : 'black',
 		color : 'black'
@@ -349,6 +388,7 @@ function showTrackList() {
 
 	scrollView.add(lblTrackDesc);
 	scrollView.add(play);
+	//scrollView.add(download);
 	scrollView.add(b);
 	w.add(scrollView);
 
@@ -364,6 +404,92 @@ function showTrackList() {
 			transform : t3,
 			duration : 300
 		});
+
+	});
+
+	download.addEventListener('click', function(e) {
+
+		alertMessage.message = 'Downloading, please wait, do not close this screen';
+		alertMessage.buttonNames = [];
+		alertMessage.show();
+
+		var newDir = Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory, 'scDownloads');
+
+		newDir.createDirectory();
+
+		id = fStripped;
+
+		var dlXhr = Titanium.Network.createHTTPClient({
+
+		});
+
+		dlXhr.onload = function() {
+
+			var file = Ti.Filesystem.getFile(newDir.resolve(), id + '.mp3');
+
+			Ti.API.warn('file is: ' + file);
+
+			Ti.API.warn('RespData is: ' + this.responseData);
+
+			file.createFile();
+
+			
+
+			Ti.API.warn(dlXhr.status);
+
+			if (dlXhr.status == 200) {
+				try {
+					file.write(this.responseData);
+					alertMessage.hide();
+					var t3 = Titanium.UI.create2DMatrix();
+					t3 = t3.scale(0);
+
+					w.close({
+						transform : t3,
+						duration : 300
+					});
+
+					switchToLib();
+				} catch (e) {
+
+				}
+
+			}
+
+		}
+
+		dlXhr.onerror = function(e) {
+			Ti.API.warn(e.error);
+			Ti.API.debug(e.error);
+			Ti.API.warn('JSON ERROR= ' + JSON.stringify(e));
+			Ti.API.warn('Client Status=' + dlXhr.status);
+			if (dlXhr.status == 403) {
+				alertMessage.hide();
+
+				alertMessage.message('Sorry unable to download file - 403 Error');
+				alertMessage.show();
+
+			}
+			alertMessage.message = 'Sorry this file is not available to download';
+			alertMessage.show();
+		}
+		//dlXhr.onerror = serviceError;
+
+		//var encUri = Titanium.Network.encodeURIComponent(dlURL);
+		var encUri = Titanium.Network.encodeURIComponent(trackTitle + '.mp3');
+
+		dlXhr.open('GET', 'http://www.globaldancesession.com/GDS_APP_ARCHIVES/' + encUri);
+		//dlXhr.open('GET', dlURL + '?client_id=' + soundcloudClientID);
+		//Ti.API.warn(dlURL + '?client_id=' + soundcloudClientID);
+		Ti.API.warn('http://www.globaldancesession.com/GDS_APP_ARCHIVES/' + encUri);
+		dlXhr.setRequestHeader('Content-Type', 'application/json');
+		dlXhr.setTimeout([500000]);
+		dlXhr.send();
+
+		Ti.API.warn('newdir ' + newDir);
+
+		//switchToLib();
+
 	});
 
 	w.open(a);
@@ -372,6 +498,9 @@ function showTrackList() {
 
 //This is called if we can't get the host response
 function serviceError() {
+
+	hideIndicator();
+
 	failureMessage.message = "Unable to connect to " + source + ", Please try again later (For best results use a 3G or WiFi connection)";
 	failureMessage.show();
 
@@ -420,7 +549,39 @@ function serviceError() {
 
 }
 
+btnLib = Titanium.UI.createButton({
+	bottom : 10,
+	left : 10,
+	width : 300,
+	height : 40,
+	color : textColor,
+	title : 'Download Library',
+	font : {
+		fontSize : 15,
+		fontFamily : 'Arial',
+		fontWeight : 'bold'
+	},
+	backgroundImage : '/images/blank.png',
+	zIndex : 2
+
+});
+
+//win.add(btnLib);
+
+btnLib.addEventListener('click', function(e) {
+	switchToLib();
+})
+function switchToLib() {
+	var lib = Titanium.UI.createWindow({
+		url : 'library.js'
+	});
+
+	Titanium.UI.currentTab.open(lib, {
+		transition : Ti.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT
+	});
+
+}
+
 //Add elements to Window
-win.add(adView);
 win.add(imgNav);
 
