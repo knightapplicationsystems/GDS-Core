@@ -1,1 +1,0 @@
-/Users/thesargenator/Titanium/GDS/Resources/main_windows/iPhone/twitter.js
